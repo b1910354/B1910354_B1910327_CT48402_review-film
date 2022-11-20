@@ -1,0 +1,110 @@
+1. hieu chinh file main.dart
+
+2. xay dung trang hien thi chi tiet film 
+    - dinh nghia lop film de mieu ta thong tin film
+
+3. danh sach cac film de trong films.txt. Ding nghia lop FilmsManager de quan ly cac film (ui/films/films_manager.dart)
+
+4. xay dung trang thong tin chi tiet film (/films/film_detail_screen.dart)
+
+5. hieu chinh main.dart de hien thi chi tiet film
+
+6. xay dung trang tong quan cac films 
+    - dinh nghia FilmGridTile trinh bay thong tin mot film (film_grid_tile)
+    - dinh nghia FilmsGrid hien thi cac film dang luoi (films_grid.dart)
+    - dinh nghia FilmOverviewScreen trang tong quan cac san pham (film_overview_screen.dart)
+    - hieu chinh main.dart kiem tra trang tong quan cac san pham
+    - hieu chinh FilmGridTile de thuc hien lien ket den trang thong tin chi tiet film(film_grid_tile.dart)
+
+7. xay dung trang cac film cua nguoi dung (them, sua xoa)
+    - dinh nghia UserFilmListTile hien thi thong tin mot film cung cac thao tac sua xoa (user_film_tile.dart)
+    - dinh nghia trang hien thi cac film (user_films_screen.dart)
+
+8. hieu ching file main.dart
+
+9. xay dung trang hien thi danh sach nhac yeu thich
+    - dinh nghia model PlayList mieu ta thong tin cua film trong danh sach film yeu thich(play_list.dart)
+    - dinh nghia lop PlayListManager quan ly cac films trong PlayList(play_list_manager.dart)
+
+10. dinh nghia ham tien ich ve hop thoai (dialog_utils.dart)
+
+11. dinh nghia PlayListCard de hien thi thong tin cua film (play_list_card.dart)
+
+12. dinh nghia trang hien thi thong tin mot PlayList(play_list_screen.dart)
+
+13. xay dung trang hien thi cac loại film()
+    - dinh nghia lop TypeFilm mieu ta thong tin cac loai film(models/type_film.dart)
+    - dinh nghia lop TypeFilmManager de quan ly cac loai film(typeFilms/type_film_manager.dart)
+    - dinh nghia Widget TypeFilmCard de hien thi thong tin typeFilm(type_film_card.dart)
+    - dinh nghia trang hien thi cac typeFilm(type_film_type.dart)
+
+14. dinh tuyen cac tuyen duong
+    - tao tap tin (ui/screen.dart) la tap tin import tap trung cua thu muc lib/ui
+    - hieu chinh (film_detail_screen.dart) static const routeName = '/film-detail';
+    - hieu chinh (user_films_screen.dart) static const routeName = '/user-films';
+    - hieu chinh (play_list_screen.dart) static const routeName = '/play-list';
+    - hieu chinh (type_film_screen.dart) static const routeName = '/type-films';
+    - hieu chinh main.dart
+
+15. dinh nghia Widget AppDrawer thuc hien dieu huong trong ung dung(ui/shared/app_drawer.dart)
+
+16. them darwer vao cac trang, dieu chinh huong giua cac trang
+    - hieu chinh (film_grid_tile.dart)
+    - hieu chinh (film_overview_screen.dart)
+    - hieu chinh (user_films_screen.dart)
+    - hieu chinh (type_film_screen.dart)
+
+    // Xay dung trang them/ cap nhat film 
+17. Chuyen FilmsManager thanh kieu ChangerNotifier,
+    dinh nghia addfilm(), updatefilm() , deletefilm() duoc quan ly boi FilmsManager
+18. Hieu chinh (main.dart) bao MaterialApp voi MultiProvider 
+19. Hieu chinh Filmsgrid, userFilmListTile, UserFilmsScreen truy xuat FilmsManager
+20. Tao trang ui/films/edit_film_screen.dart 
+        + Phuong thuc init(), dispose(): huy/ giai phong cac bien
+        + bien _imageUrlFocusNode dung nghe trang thai focus cua truong nhap lieu hinh anh 
+        + phuong thuc build xay dung bieu mau hieu chinh san pham 
+        + dinh nghia cac truong nhap lieu 
+        + phuong thuc _saveForm thuc hien them film vao ds film duoc quan ly boi FilmsManager
+        + Dinh nghia ham showErrorDialog() trong ( ui/shared/dialog_utils.dart)
+        + Hieu chinh (lib/main.dart)
+        + hieu chinh widget UserFilmListTile
+        + hieu chinh widget UserFilmsScreen 
+
+    // Them film vao playlist 
+21. Chuyen CartManager thanh kieu ChangerNotifier. 
+    dinh nghia phuong thuc them / cap nhat/ xoa film trong playlist quan ly boi PlayListManager        
+22. Hieu chinh main.dart cung cap doi tuong PlayListManager 
+23. Hieu chinh PlayListCard,  PlayListScreen, FilmGridTitle, FilmsOverviewScreen
+
+// ket noi database
+
+24. Hiệu chỉnh lớp Film thêm định nghĩa hai phương thức toJson() và fromJson() giúp
+chuyển đổi qua lại giữa một đối tượng Film và chuỗi JSON.
+
+25. Định nghĩa lớp trừu tượng FirebaseService lưu giữ những tham số cần thiết để thực hiện các
+lời gọi REST API (lib/services/firebase_service):
+
+26. Định nghĩa lớp FilmsService chịu trách nhiệm thực hiện các lời gọi REST API đến Firebase
+để truy xuất và cập nhật dữ liệu (lib/services/films.dart):
+
+27. Hiệu chỉnh lớp FilmsManager sử dụng FilmsService để tải danh mục film và
+thêm sản phẩm vào CSDL (lib/ui/films/films_manager.dart):
+
+28. Hiệu chỉnh widget FilmsOverviewScreen thực hiện tải danh mục film khi khởi tạo.
+Trong quá trình tải dữ liệu thì hiển thị thanh tiến trình chờ
+(lib/ui/films/films_overview_screen.dart):
+
+29. Hiệu chỉnh widget UserFilmsScreen thực hiện tải danh mục film khi khởi tạo.
+Trong quá trình tải dữ liệu thì hiển thị thanh tiến trình chờ
+(lib/ui/films/user_films_screen.dart):
+
+30. Hiệu chỉnh lib/main.dart cập nhật authToken của FilmsManager dựa trên giá trị
+authToken của AuthManager.
+
+31. Cập nhật, xóa film lưu trên CSDL của Firebase
+    - Hiệu chỉnh FilmsService (lib/services/films_service.dart), thêm hai phương thức để cập
+nhật và xóa film lưu trên CSDL Realtime của Firebase:
+
+32. hieu chinh FilmsManager(films_manager.dart) cap nhat hai phuong thuc update and delete
+
+33. hieu chinh _saveForm trong _EditFilmScreenState(edit_film_screen.dart)
