@@ -32,14 +32,14 @@ class PlayListScreen extends StatelessWidget {
             height: 10,
           ),
           Expanded(
-            child: buildCartDetails(playListManager),
+            child: buildPlayDetails(playListManager),
           ),
         ],
       ),
     );
   }
 
-  Widget buildCartDetails(PlayListManager playListManager) {
+  Widget buildPlayDetails(PlayListManager playListManager) {
     return ListView(
       children: playListManager.filmsEntries
           .map(
